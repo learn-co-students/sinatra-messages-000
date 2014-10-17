@@ -14,17 +14,23 @@
         # render the template below
         # filling the content from
         # the message
+        @messages.each do |message|
       %>
 
       <div class="message">
         <!-- <a href="" class="close"></a> -->
         <div class="from">
+          <p><%= message.from %></p>
         </div>
         <div class="content">
+          <p><%= message.content %></p>
         </div>
         <div class="time">
+          <p><%= message.time %></p>
         </div>
       </div>
+
+      <% end %>
 
     </div>
   </body>
