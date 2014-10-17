@@ -1,29 +1,32 @@
-# post_message.rb
+require_relative "../config/environment"
 require "net/http"
+require 'uri'
 
-puts ""
-print "Who do you want to message? "
-to = gets.chomp
+loop do 
+  puts ""
+  print "Who do you want to message? "
+  to = gets.chomp
+  print "Who are you? "
+  from = gets.chomp
 
-print "Who are you? "
-from = gets.chomp
+  print "Your message: "
+  content = gets.chomp
 
-print "Your message: "
-content = gets.chomp
+  puts ""
+  print "Sending message..."
 
-puts ""
-print "Sending message..."
+  uri = URI("http://localhost:9292")
 
-uri = URI("http://localhost:9292")
+  # TODO: Post the message to the server
+  # How do you submit a POST request using Ruby?
+  # Maybe a library called Net::HTTP has a post method? Google.
 
-# TODO: Post the message to the server
-# How do you submit a POST request using Ruby?
-# Maybe a library called Net::HTTP has a post method? Google.
+  response = Net::HTTP.post_form(uri, to: to, from: from, content: content)
+  if response.message == "OK"
+   puts "It worked :)"
+  else
+   puts "Oops, something went wrong :("
+  end
 
-if response.body == "success"
-  puts "done!"
-else
-  puts "Oops, something went wrong :("
+  puts ""
 end
-
-puts ""

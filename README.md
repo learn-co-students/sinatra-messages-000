@@ -10,13 +10,17 @@ We're going to be build a simple messaging system using Sinatra. We'll be writin
 
 ## Instructions
 
-1. Read up on  [Sinatra Reloader](http://www.sinatrarb.com/contrib/reloader.html).
+1. Read up on [Sinatra Reloader](http://www.sinatrarb.com/contrib/reloader.html).
 
 2. The contents of `bin/post_message.rb` must submit a `POST` request to `localhost:9292` (this running sinatra application). It should post the to, from, and content variables along with the request. Lookup how to submit POST requests using net/http and how to submit data along with that request.
 
-3. Build out the post '/' route in `app.rb` to take the incoming data and create a message from it. Note that we're persisting with ActiveRecord; check out the migration to see what data should be persisted.
+3. We want to persist the data collected from the `POST` request so edit the migration. To migrate to the database, check out the `Rakefile` which defines some helpful tasks.
 
-4. Edit `views/messages.erb` to iterate through all the `@messages` and display the data.
+4. Build out the post '/' route in `app.rb` to take the incoming data and create a message from it.
+
+5. Edit `views/messages.erb` to iterate through all the `@messages` and display the data.
+
+There are no tests. Just make it work.
 
 ## Resources
 

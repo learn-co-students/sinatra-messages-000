@@ -7,6 +7,11 @@ namespace :db do
     require_relative './db/migrations/01_create_messages.rb'
     CreateMessages.migrate(:up) if defined?(CreateMessages)
   end
+
+  task :rollback => [:environment] do
+    require_relative './db/migrations/01_create_messages.rb'
+    CreateMessages.migrate(:down) if defined?(CreateMessages)
+  end
 end
 
 task :console => [:environment] do
