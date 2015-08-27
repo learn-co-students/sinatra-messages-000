@@ -1,7 +1,6 @@
-
 # Sinatra Messages
 
-We're going to be build a simple messaging system using Sinatra. We'll be writing out a `POST` request and handling the data posted to display it in an ERB file.
+We're going to be building a simple messaging system using Sinatra. We'll be writing out a `POST` request and handling the data posted to display it in an ERB file.
 
 ## Instructions
 
