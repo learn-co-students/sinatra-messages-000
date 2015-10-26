@@ -16,16 +16,22 @@
         # the message
       %>
 
+      <% Message.all.each do |message| %>
       <div class="message">
         <div class="to">
+          <p>to: <%= message.to %></p>
         </div>
         <div class="from">
+          <p>from: <%= message.from %></p>
         </div>
         <div class="content">
+          <p>message: <%= message.content %></p>
         </div>
         <div class="time">
+          <p>sent at: <%= message.updated_at %></p>
         </div>
       </div>
+      <% end %>
 
     </div>
   </body>
