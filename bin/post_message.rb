@@ -1,4 +1,4 @@
-# post_message.rb
+require_relative '../config/environment'
 require "net/http"
 require 'uri'
 
@@ -19,10 +19,14 @@ uri = URI("http://localhost:9292")
 # TODO: Post the message to the server
 # How do you submit a POST request using Ruby?
 # Maybe a library called Net::HTTP has a post method? Google.
+
+params = {to: "#{to}", from: "#{from}", content: "#{content}"}
+response = Net::HTTP.post_form(uri, params)
+
 if response.message == "OK"
- puts "It worked :)"
+  puts "It worked :)"
 else
- puts "Oops, something went wrong :("
+  puts "Oops, something went wrong :("
 end
 
 puts ""
