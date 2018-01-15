@@ -15,18 +15,23 @@
         # filling the content from
         # the message
       %>
-
+    <% @messages.each do |msg| %>
       <div class="message">
         <div class="to">
+          <%=  msg.to %>
         </div>
         <div class="from">
+          <%= msg.from %>
         </div>
         <div class="content">
+          <%= msg.content %>
         </div>
         <div class="time">
+          <%= msg.created_at %>
         </div>
       </div>
-
+      <% end %>
     </div>
+
   </body>
 </html>
